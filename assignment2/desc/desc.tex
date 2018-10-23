@@ -1,0 +1,114 @@
+\documentclass[a4paper,12pt]{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage[english]{babel}
+    \usepackage{graphicx}
+    \usepackage{geometry}
+    \geometry{a4paper,
+                 tmargin = 35mm, 
+                 lmargin = 25mm,
+                 rmargin = 30mm,
+                 bmargin = 30mm}
+    \usepackage{mathtools}
+    \usepackage{amsmath}
+    \usepackage{color}
+    \usepackage{setspace}
+    \usepackage{amsmath,amssymb}
+    \usepackage{float}
+    \usepackage{listings}
+    
+    \usepackage{indentfirst}
+	\usepackage{subfig}
+	    
+    \renewcommand\thesection{\Roman{section}.}
+    \renewcommand\thesubsection{\thesection\arabic{subsection}}
+    \renewcommand\thesubsubsection{}
+    
+\begin{document}
+
+\begin{titlepage}
+
+	\centering
+	{\scshape\LARGE ELTE Faculty of Science\par}
+	\vspace{3cm}
+	{\scshape\Large Magnets via the metropolis algorithm\par}
+    \vspace{1cm}
+    {\scshape\large The Ising model\par}
+    \vspace{1cm}
+	{\large\itshape Alex Olar \par}
+    \vspace{3cm}
+    \vfill
+	{\large 2018 \par}
+
+\end{titlepage}
+
+\onehalfspacing
+
+\section{Motivation}
+
+\par Ferromagnets contain finite size domains in which the spins of all atoms
+point in the same direction. When an external magnetic field is applied it is
+the nature of the material that the domains start to shift and align. The material
+becomes magnetic. However, the process is temperature dependent, therefore when
+the temperature gets high enough it looses its magnetism. The point where this 
+happens is called the Curie point and is material dependent. This phase transition
+is an interesting domain to examine.
+
+\section{The Ising model}
+
+\par Assuming we have a chain of spins where only the nearest neighbors
+interact with each other then each spin is in the potential:
+
+\begin{equation*}
+    V_{i} = -J\textbf{s}_{i}\textbf{s}_{i+1} - g\mu_{B}\textbf{s}_{i}\textbf{B}
+\end{equation*}
+
+\par Where \textbf{B} is the externally applied magnetic field and $\mu_{B}$
+is the well known \textit{Bohr-magneton}. J is the so called exchange energy
+between spins.
+
+\par With the simulations I want to find out the accuracy of the 
+derived parameters depending on the number of particles. For a 
+system in state $\Psi_{\alpha}$ the energy of the system is expected
+to be:
+
+\begin{equation*}
+    E_{\Psi_{\alpha}} = \Big<\Psi_{\alpha}\Big|\sum_{i}V_{i}\Big|\Psi_{\alpha}\Big> = -J\sum_{i=1}^{N-1}s_{i}s_{i+1} - B\mu_{b}\sum_{i=1}^{N}s_{i}
+\end{equation*}
+
+\par The best method to simulate a magnetic system is the metropolis algorithm.
+In the next section I'll talk about that:
+
+\section{The metropolis algorithm}
+
+\par The steps of the algorithm are the following:
+
+\begin{enumerate}
+    \item Initial spin configuration of the system.
+    \item Generating a trial configuration by randomly picking a particle and flipping its spin
+    than calculating its energy.
+    \item If $E_{\Psi_{\alpha}} \geq E_{\Psi_{trial}}$ then accept the state
+    otherwise accept with relative probability: $P_{rel} = e^{-\frac{\Delta E}{k_{B}T}}$
+    \item If $P_{rel} > random_number$ then accept, otherwise accept the same state as the
+    forward state (where \textit{random number} is in the range [0, 1] ).
+\end{enumerate}
+
+\section{What I am going to do?}
+
+\par I am going to implement a 1D and a 2D Ising-model with arbitrary, hot and cold 
+starting configurations and make great visualizations for it by:
+
+\begin{itemize}
+    \item writing the metropolis algorithm
+    \item calculating the statistical properties of the system, such
+    as magnetization, specific heat and compare them with analytic results
+    \item extend the model to second nearest neighbors as well
+\end{itemize}
+
+\par My goal is to make a tool (Python notebook or enough time provided 
+a web application) that is interactive and shows visualizations of the processes.
+
+\par The obstacles are the hard debugging of python code and acquiring the 
+best random generator and finding the best visualization tool out there.
+
+\end{document}

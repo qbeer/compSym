@@ -1,0 +1,16 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {I.}Solution}{3}
+\contentsline {subsection}{\numberline {I.1}Potentials}{4}
+\contentsline {subsubsection}{\numberline {}Book example (+)}{4}
+\contentsline {subsubsection}{\numberline {}Book example (-)}{5}
+\contentsline {subsubsection}{\numberline {}Custom potential (+)/(-)}{6}
+\contentsline {section}{\numberline {II.}The cross section}{7}
+\contentsline {subsection}{\numberline {II.1}Potentials}{8}
+\contentsline {subsubsection}{\numberline {}Book example (+)/(-)}{8}
+\contentsline {subsubsection}{\numberline {}Custom (+)/(-)}{8}
+\contentsline {subsection}{\numberline {II.2}Interpretation}{9}
+\contentsline {section}{\numberline {III.}Phase space diagrams}{9}
+\contentsline {subsection}{\numberline {III.1}Potentials}{10}
+\contentsline {subsubsection}{\numberline {}Book example (+)/(-)}{10}
+\contentsline {subsubsection}{\numberline {}Custom example (+)/(-)}{11}
+\contentsline {section}{\numberline {IV.} Overview}{11}
