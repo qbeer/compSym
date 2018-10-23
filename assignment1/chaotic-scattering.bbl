@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{book}
+Rubin~H. Landau.
+\newblock A survey of computational physics.
+\newblock 2011.
+
+\bibitem{repo}
+Alex Olar.
+\newblock Chaotic scattering - github repository.
+\newblock 2018.
+
+\bibitem{odeint}
+Scipy.
+\newblock Scipy docs for odeint.
+\newblock 2018.
+
+\bibitem{wiki}
+Wikipedia.
+\newblock Chaotic scattering.
+\newblock 2018.
+
+\end{thebibliography}
